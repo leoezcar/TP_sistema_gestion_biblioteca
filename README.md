@@ -36,4 +36,6 @@ python main.py
 
 ## Integrantes
 
-Completar con los nombres y apellidos de todos los integrantes del grupo.
+- Gianfranco Falcucci
+- Thiago Canteros
+- Leonardo Carabajal
