@@ -84,6 +84,12 @@ classDiagram
         +obtener_dias_maximos()
     }
 
+    class SingletonMeta {
+        <<metaclass>>
+        -_instancias: dict
+        +__call__(cls, args, kwargs)
+    }
+
     class GestorLibros {
         +libros: list
         +alta_libro(titulo, autor, isbn, anio_publicacion, cantidad_paginas)
@@ -128,6 +134,10 @@ classDiagram
     GestorLibros o-- Libro : administra
     GestorUsuarios o-- Usuario : administra
     GestorPrestamos o-- Prestamo : administra
+
+    SingletonMeta ..> GestorLibros : instancia única
+    SingletonMeta ..> GestorUsuarios : instancia única
+    SingletonMeta ..> GestorPrestamos : instancia única
 ```
 
 ## Explicación de las relaciones
@@ -159,6 +169,12 @@ El sistema utiliza el patrón Strategy mediante la clase `EstrategiaPrestamo` y 
 - `EstrategiaPrestamoInvestigador`
 
 Este patrón permite calcular la duración máxima del préstamo según el tipo de usuario sin modificar la clase `Prestamo`.
+
+### Patrón de diseño Singleton
+
+`SingletonMeta` es una metaclase que se aplica a `GestorLibros`, `GestorUsuarios` y `GestorPrestamos`.
+
+Garantiza que durante la ejecución del programa solo exista una instancia de cada gestor. Esto evita que se creen colecciones de datos duplicadas o desincronizadas.
 
 ### Metaclase
 

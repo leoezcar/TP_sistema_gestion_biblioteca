@@ -24,7 +24,9 @@ Permite gestionar libros, usuarios y préstamos utilizando Programación Orienta
 - Composición: `Prestamo` contiene un `DetallePrestamo`.
 - Decorador propio: `registrar_accion`.
 - Metaclase: `MetaEntidad`.
-- Patrón de diseño: Strategy, aplicado a la duración de los préstamos.
+- Patrones de diseño:
+  - **Strategy**: aplicado a la duración de los préstamos según el tipo de usuario (`EstrategiaPrestamo` y sus variantes).
+  - **Singleton**: aplicado a los gestores (`GestorLibros`, `GestorUsuarios`, `GestorPrestamos`) mediante la metaclase `SingletonMeta`, garantizando una única instancia de cada gestor.
 
 ## Ejecución
 

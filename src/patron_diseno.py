@@ -1,14 +1,19 @@
 """
-Patrón de diseño aplicado: Strategy.
+Patrones de diseño aplicados: Strategy y Singleton.
 
-El sistema utiliza el patrón Strategy para calcular la cantidad máxima de días
-de un préstamo según el tipo de usuario.
+Strategy:
+    El sistema utiliza el patrón Strategy para calcular la cantidad máxima de
+    días de un préstamo según el tipo de usuario. La duración puede cambiar
+    según la regla elegida. En vez de poner muchos if dentro de la clase
+    Prestamo, se separa esa lógica en distintas estrategias. Así, si más
+    adelante se agrega otro tipo de usuario, se puede crear una nueva
+    estrategia sin modificar la clase Prestamo.
 
-Justificación:
-La duración de un préstamo puede cambiar según la regla elegida. En vez de
-poner muchos if dentro de la clase Prestamo, se separa esa lógica en distintas
-estrategias. Así, si más adelante se agrega otro tipo de usuario, se puede crear
-una nueva estrategia sin modificar la clase Prestamo.
+Singleton:
+    Las clases gestoras (GestorLibros, GestorUsuarios, GestorPrestamos) usan
+    la metaclase SingletonMeta para garantizar que exista una única instancia
+    de cada gestor. Esto evita que se creen colecciones duplicadas de datos
+    durante la ejecución del programa.
 """
 
 
@@ -57,3 +62,25 @@ def obtener_estrategia_por_usuario(usuario):
         return EstrategiaPrestamoInvestigador()
 
     return EstrategiaPrestamoNormal()
+
+
+class SingletonMeta(type):
+    """
+    Metaclase que implementa el patrón Singleton.
+
+    Se utiliza en las clases gestoras (GestorLibros, GestorUsuarios,
+    GestorPrestamos) para garantizar que solo exista una instancia de cada
+    gestor durante la ejecución del programa.
+
+    Justificación:
+    En una biblioteca digital tiene sentido que la colección de libros, usuarios
+    y préstamos sea administrada por un único gestor. Si se pudieran crear
+    múltiples instancias, los datos podrían quedar desincronizados.
+    """
+
+    _instancias = {}
+
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instancias:
+            cls._instancias[cls] = super().__call__(*args, **kwargs)
+        return cls._instancias[cls]

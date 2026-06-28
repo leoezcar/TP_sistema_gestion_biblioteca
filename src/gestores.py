@@ -8,9 +8,10 @@ colecciones de libros, usuarios y préstamos.
 from libro import Libro
 from usuario import Usuario
 from prestamo import Prestamo
+from patron_diseno import SingletonMeta
 
 
-class GestorLibros:
+class GestorLibros(metaclass=SingletonMeta):
     """Administra altas, bajas, modificaciones y listados de libros."""
 
     def __init__(self):
@@ -61,7 +62,7 @@ class GestorLibros:
         return self.libros
 
 
-class GestorUsuarios:
+class GestorUsuarios(metaclass=SingletonMeta):
     """Administra altas, bajas, modificaciones y listados de usuarios."""
 
     def __init__(self):
@@ -112,7 +113,7 @@ class GestorUsuarios:
         return self.usuarios
 
 
-class GestorPrestamos:
+class GestorPrestamos(metaclass=SingletonMeta):
     """Administra préstamos, devoluciones y consultas de préstamos activos."""
 
     def __init__(self):
