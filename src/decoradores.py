@@ -1,9 +1,6 @@
 """
 Decoradores propios del sistema.
 
-La consigna pide implementar al menos un decorador propio e integrarlo dentro
-del sistema. En este archivo se define un decorador simple para registrar
-acciones importantes.
 """
 
 from functools import wraps

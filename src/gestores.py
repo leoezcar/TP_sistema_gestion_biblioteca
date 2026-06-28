@@ -1,8 +1,6 @@
 """
 Gestores del sistema.
 
-Este archivo pertenece al Módulo C. Contiene las clases encargadas de administrar
-colecciones de libros, usuarios y préstamos.
 """
 
 from libro import Libro

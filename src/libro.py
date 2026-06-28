@@ -1,7 +1,7 @@
 """
 Clase Libro.
 
-Este archivo pertenece al Módulo A. Modela los libros de la biblioteca digital.
+Modela los libros de la biblioteca digital.
 """
 
 from entidad import Entidad
@@ -11,7 +11,7 @@ class Libro(Entidad):
     """
     Representa un libro dentro del sistema.
 
-    Datos mínimos pedidos por la consigna:
+    Datos mínimos:
     título, autor, ISBN, año de publicación y cantidad de páginas.
     """
 

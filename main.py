@@ -1,8 +1,6 @@
 """
 Sistema de Gestión de Biblioteca Digital.
 
-Este archivo pertenece al Módulo C. Contiene un menú de consola simple para
-usar los gestores de libros, usuarios y préstamos.
 """
 
 import os

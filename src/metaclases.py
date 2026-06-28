@@ -1,9 +1,6 @@
 """
 Módulo de metaclases del sistema.
 
-La consigna pide implementar una metaclase utilizando type o una clase derivada
-de type. En este archivo se define MetaEntidad, que se usa en la clase base
-Entidad.
 """
 
 

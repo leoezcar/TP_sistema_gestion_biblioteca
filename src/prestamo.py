@@ -1,5 +1,4 @@
 """
-Módulo B: clases relacionadas con préstamos.
 
 Este archivo contiene DetallePrestamo y Prestamo. Además, Prestamo utiliza el
 patrón Strategy definido en patron_diseno.py para calcular la duración máxima

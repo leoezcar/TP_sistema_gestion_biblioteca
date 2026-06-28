@@ -1,7 +1,6 @@
 """
 Clase Usuario.
 
-Este archivo pertenece al Módulo A. Modela los usuarios de la biblioteca digital.
 """
 
 from entidad import Entidad
@@ -11,7 +10,7 @@ class Usuario(Entidad):
     """
     Representa un usuario del sistema.
 
-    Datos mínimos pedidos por la consigna:
+    Datos mínimos pedidos:
     nombre, apellido, DNI y correo electrónico.
     """
 
